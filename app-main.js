@@ -1,6 +1,6 @@
 /*
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 */
 
@@ -308,7 +308,7 @@ const app = electron.app
                 role: "help",
                 submenu: [
                     { label: "More about LiVE",          click: openURL("https://video-experience.live") },
-                    { label: "More about LiVE Receiver", click: openURL("https://github.com/rse/live-receiver") }
+                    { label: "More about LiFE Receiver", click: openURL("https://github.com/cihanoecal/life-receiver") }
                 ]
             }
         ]
@@ -503,11 +503,6 @@ const app = electron.app
         app.ipc.handle("recording-info", async (event, id) => {
             return recording.info(id)
         })
-        setInterval(async () => {
-            await recording.prune(app.recordingHours)
-            app.win.webContents.send("recordings-update")
-        }, 1 * 60 * 60 * 1000)
-        await recording.prune(app.recordingHours)
         app.win.webContents.send("recordings-renew")
 
         /*  the LiVE Relay VideoStream/EventStream communication establishment  */
@@ -706,8 +701,6 @@ const app = electron.app
             settings.set("audio-output-device",    app.audioOutputDevice)
             settings.set("language",               app.language)
 
-            /*  prune in case the recording hours were changed  */
-            recording.prune(app.recordingHours)
             app.win.webContents.send("recordings-renew")
         })
         app.ipc.handle("login", async (event, {

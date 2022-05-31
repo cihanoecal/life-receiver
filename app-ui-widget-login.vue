@@ -1,7 +1,7 @@
 <!--
 **
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 **
 -->
@@ -104,8 +104,8 @@
                 v-tooltip.bottom="{ content: $t('login.about-tooltip') }"
                 v-on:click="about">
                 <div ref="logo" class="logo-container">
-                    <img v-bind:src="logo1" class="logo logo1" alt="LiVE"/>
-                    <img v-bind:src="logo2" class="logo logo2" alt="LiVE"/>
+                    <img v-bind:src="logo1" class="logo logo1" alt="LiFE"/>
+                    <img v-bind:src="logo2" class="logo logo2" alt="LiFE"/>
                 </div>
                 <div class="title">Receiver {{ version }}</div>
             </div>

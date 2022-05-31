@@ -1,7 +1,7 @@
 <!--
 **
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 **
 -->
@@ -126,7 +126,7 @@
         <div class="hint">
             <span v-if="updateable">
                 <b>{{ $t("update.hint-text-0") }}:</b>
-                <a href="https://github.com/rse/live-receiver" v-on:click="openURL">LiVE Receiver</a>
+                <a href="https://github.com/cihanoecal/life-receiver" v-on:click="openURL">LiFE Receiver</a>
                 <span v-html="$t('update.hint-text-1')"></span>
                 <span v-if="versions.current.version !== versions.running.version"
                     v-html="$t('update.hint-text-2')">
@@ -134,7 +134,7 @@
             </span>
             <span v-if="!updateable">
                 <b>{{ $t("update.hint-text-0") }}:</b>
-                <a href="https://github.com/rse/live-receiver" v-on:click="openURL">LiVE Receiver</a>
+                <a href="https://github.com/cihanoecal/life-receiver" v-on:click="openURL">LiFE Receiver</a>
                 <span v-html="$t('update.hint-text-3')"></span>
                 <span v-if="versions.current.version !== versions.running.version"
                     v-html="$t('update.hint-text-4')">

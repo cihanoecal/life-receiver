@@ -1,7 +1,7 @@
 <!--
 **
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 **
 -->
@@ -115,7 +115,7 @@
                         </div>
                         <span class="title">{{ $t("window.move-window-button") }}</span>
                         <div class="logo">
-                            <img v-bind:src="logo" alt="LiVE"/>
+                            <img v-bind:src="logo" alt="LiFE"/>
                         </div>
                     </div>
                 </div>

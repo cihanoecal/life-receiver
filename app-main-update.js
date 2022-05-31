@@ -1,6 +1,6 @@
 /*
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 */
 
@@ -25,26 +25,26 @@ module.exports = class Update {
     constructor (options = {}) {
         /*  determine options  */
         this.options = Object.assign({
-            urlDist:    "https://github.oscdn.org/rse/live-receiver/%V/LiVE-Receiver-%S-x64.zip",
-            urlVersion: "https://github.com/rse/live-receiver/raw/master/VERSION.md"
+            urlDist:    "https://github.oscdn.org/cihanoecal/life-receiver/%V/LiFE-Receiver-%S-x64.zip",
+            urlVersion: "https://github.com/cihanoecal/life-receiver/raw/master/VERSION.md"
         }, options)
 
         /*  determine absolute path to our own application file  */
         this.app = ""
         if (electron.app.isPackaged) {
             if (os.platform() === "win32") {
-                /*  under Windows we are a portable app "LiVE-Receiver.exe"
+                /*  under Windows we are a portable app "LiFE-Receiver.exe"
                     and Electron Builder provides us the direct path to it  */
                 this.app = path.resolve(process.env.PORTABLE_EXECUTABLE_FILE)
             }
             else if (os.platform() === "darwin") {
-                /*  under macOS we are a regular app "LiVE-Receiver.app"
+                /*  under macOS we are a regular app "LiFE-Receiver.app"
                     but we have to step up to the base directory from its
-                    actual embedded executable "Contents/MacOS/LiVE-Receiver"  */
+                    actual embedded executable "Contents/MacOS/LiFE-Receiver"  */
                 this.app = path.resolve(path.join(electron.app.getPath("exe"), "..", "..", ".."))
             }
             else if (os.platform() === "linux") {
-                /*  under Linux we are an AppImage executable "LiVE-Receiver"
+                /*  under Linux we are an AppImage executable "LiFE-Receiver"
                     and the AppImage stub provides us the direct path to it  */
                 this.app = path.resolve(process.env.APPIMAGE)
             }
@@ -267,11 +267,11 @@ module.exports = class Update {
         /*  final sanity check  */
         let from
         if (os.platform() === "win32")
-            from = path.join(tmpdir.name, "LiVE-Receiver.exe")
+            from = path.join(tmpdir.name, "LiFE-Receiver.exe")
         else if (os.platform() === "darwin")
-            from = path.join(tmpdir.name, "LiVE-Receiver.app")
+            from = path.join(tmpdir.name, "LiFE-Receiver.app")
         else if (os.platform() === "linux")
-            from = path.join(tmpdir.name, "LiVE-Receiver")
+            from = path.join(tmpdir.name, "LiFE-Receiver")
         const accessible = await fs.promises.access(from, fs.constants.F_OK | fs.constants.R_OK)
             .then(() => true).catch(() => false)
         if (!accessible)

@@ -1,6 +1,6 @@
 /*
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 */
 
@@ -212,7 +212,7 @@ module.exports = class VideoStream extends EventEmitter {
                     this.emit("fatal", "sorry, the embedded FFmpeg program unfortunately crashes under " +
                         "your particular operating system. Please install a native FFmpeg in your system, " +
                         "ensure that the executable \"ffmpeg\" is in your $PATH and then restart this " +
-                        "LiVE Receiver application again, please.")
+                        "LiFE Receiver application again, please.")
                 }
             }
         })

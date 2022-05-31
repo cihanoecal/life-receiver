@@ -1,6 +1,6 @@
 /*
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 */
 
@@ -260,30 +260,7 @@ module.exports = class Recording extends EventEmitter {
 
     /*  prune all recordings  */
     async prune (after) {
-        /*  iterate over all expired recordings  */
-        const recordings = await this.recordings()
-        for (const recording of recordings) {
-            /*  ensure recording (still) exists  */
-            const pathname = path.join(this.options.basedir, recording.id)
-            if (!(await this.pathExists(pathname)))
-                continue
-
-            /*  in case the recording expired...  */
-            const now = dayjs()
-            const expires = dayjs(recording.start)
-                .add(recording.duration, "second")
-                .add(after, "hour")
-            if (expires.isBefore(now)) {
-                /*  ...remove it  */
-                this.options.log("info", `pruning recording "${recording.id}"`)
-                await new Promise((resolve, reject) => {
-                    rimraf(pathname, { disableGlob: true }, (err) => {
-                        if (err) reject(err)
-                        else     resolve()
-                    })
-                })
-            }
-        }
+        // do nothing :)
     }
 }
 

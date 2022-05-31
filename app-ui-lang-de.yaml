@@ -1,6 +1,6 @@
 ##
-##  Live Video Experience (LiVE)
-##  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Live Free Video Experience (LiFE)
+##  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
@@ -149,7 +149,7 @@ window:
 
 login:
 
-    title:                          Deine LiVE Sitzung
+    title:                          Deine LiFE Sitzung
 
     relay-server:                   LiVE Relay-Server
     relay-server-placeholder:       Geben Sie den LiVE Relay-Server FQDN ein...
@@ -157,13 +157,13 @@ login:
                                     Fully Qualified Domain Name (FQDN),<br/>
                                     wie <tt>live.example.com</tt>, ein.
 
-    access-token:                   LiVE Zugriffsschlüssel
-    access-token-placeholder:       Geben Sie den LiVE Zugriffsschlüssel ein...
-    access-token-tooltip:           Bitte geben Sie den erhaltenen <b>LiVE Zugriffschlüssel</b>,<br/>
+    access-token:                   LiFE Zugriffsschlüssel
+    access-token-placeholder:       Geben Sie den LiFE Zugriffsschlüssel ein...
+    access-token-tooltip:           Bitte geben Sie den erhaltenen <b>LiFE Zugriffschlüssel</b>,<br/>
                                     wie <tt>example-XXXX-XXXX</tt>, ein.
 
     connect:                        VERBINDEN
-    connect-tooltip:                Bitte drücken, um sich mit Ihrer gewünschten<br/><b>LiVE Sitzung</b> zu verbinden!
+    connect-tooltip:                Bitte drücken, um sich mit Ihrer gewünschten<br/><b>LiFE Sitzung</b> zu verbinden!
 
     recordings-placeholder:         Wähle die Aufzeichnung...
     recordings-tooltip:             Wähle eine bestimmte Aufzeichnung<br/>, um sie entweder abzuspielen oder zu löschen.
@@ -174,19 +174,19 @@ login:
     settings-tooltip:               Bitte konfigurieren Sie hier Ihre <b>Identität</b>,<br/>
                                     <b>Datenschutzstufe</b>, und lokalen <b>Audio-Geräte</b>.
 
-    about-tooltip:                  Finden Sie hier Details über<br/>Ihren <b>LiVE Receiver</b> heraus.
+    about-tooltip:                  Finden Sie hier Details über<br/>Ihren <b>LiFE Receiver</b> heraus.
 
     updates-subtitle:               Aktualisierungen
-    updates-tooltip:                Aktualisieren Sie hier Ihr<br/>Programm <b>LiVE Receiver</b>.
+    updates-tooltip:                Aktualisieren Sie hier Ihr<br/>Programm <b>LiFE Receiver</b>.
 
 settings:
 
-    title:                          Deine LiVE Einstellungen
+    title:                          Deine LiFE Einstellungen
 
     portrait-label:                 Dein Portrait
     portrait-footnote:              >
                                     * Datenschutzhinweis: Dein Portrait und dein Name werden übertragen,
-                                    wenn du dich zu einer <b>LiVE Sitzung</b> verbindest. Setze unten deine maximale
+                                    wenn du dich zu einer <b>LiFE Sitzung</b> verbindest. Setze unten deine maximale
                                     Datenschutzstufe, um anzugeben, bis zu (und einschließlich) welcher Stufe
                                     deine Teilnehmer-Identität der Audienz mitgeteilt wird.
 
@@ -224,9 +224,9 @@ settings:
 
     language-label:                 Benutzerschnittstellensprache
     language-en-label:              Englisch (EN)
-    language-en-tooltip:            Benutzerschnittstelle des <b>LiVE Receiver</b> nutzt die Sprache Englisch.
+    language-en-tooltip:            Benutzerschnittstelle des <b>LiFE Receiver</b> nutzt die Sprache Englisch.
     language-de-label:              Deutsch (DE)
-    language-de-tooltip:            Benutzerschnittstelle des <b>LiVE Receiver</b> nutzt die Sprache Deutsch.
+    language-de-tooltip:            Benutzerschnittstelle des <b>LiFE Receiver</b> nutzt die Sprache Deutsch.
 
     audio-input-label:              Audio-Eingabegerät
     audio-input-tooltip:            Dein lokales Audio-Eingabegerät (Mikrofon).<br/>

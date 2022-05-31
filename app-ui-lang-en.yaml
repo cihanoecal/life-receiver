@@ -1,6 +1,6 @@
 ##
-##  Live Video Experience (LiVE)
-##  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Live Free Video Experience (LiFE)
+##  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
@@ -147,7 +147,7 @@ window:
 
 login:
 
-    title:                          Your LiVE Session
+    title:                          Your LiFE Session
 
     relay-server:                   LiVE Relay Server
     relay-server-placeholder:       Enter your LiVE Relay Server FQDN...
@@ -155,9 +155,9 @@ login:
                                     Fully Qualified Domain Name (FQDN),<br/>
                                     like <tt>live.example.com</tt>.
 
-    access-token:                   LiVE Access Token
-    access-token-placeholder:       Enter your LiVE access token...
-    access-token-tooltip:           Please enter the received <b>LiVE Access Token</b>,<br/>
+    access-token:                   LiFE Access Token
+    access-token-placeholder:       Enter your LiFE access token...
+    access-token-tooltip:           Please enter the received <b>LiFE Access Token</b>,<br/>
                                     like <tt>example-XXXX-XXXX</tt>.
 
     connect:                        CONNECT
@@ -172,10 +172,10 @@ login:
     settings-tooltip:               Please configure your <b>identity</b>, <b>privacy level</b>,<br/>
                                     and local <b>audio devices</b> here.
 
-    about-tooltip:                  Find out details of your<br/><b>LiVE Receiver</b> here.
+    about-tooltip:                  Find out details of your<br/><b>LiFE Receiver</b> here.
 
     updates-subtitle:               Updates
-    updates-tooltip:                Update your program<br/><b>LiVE Receiver</b> here.
+    updates-tooltip:                Update your program<br/><b>LiFE Receiver</b> here.
 
 settings:
 
@@ -222,7 +222,7 @@ settings:
 
     language-label:                 User Interface Language
     language-en-label:              English (EN)
-    language-en-tooltip:            <b>LiVE Receiver</b> user interface is using the English language.
+    language-en-tooltip:            <b>LiFE Receiver</b> user interface is using the English language.
     language-de-label:              German (DE)
     language-de-tooltip:            <b>LiVE Receiver</b> user interface is using the German language.
 

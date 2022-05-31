@@ -1,7 +1,7 @@
 <!--
 **
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 **
 -->
@@ -14,23 +14,23 @@
             </div>
         </div>
         <div class="col-1">
-            <img v-bind:src="logo" class="logo" alt="LiVE"/>
+            <img v-bind:src="logo" class="logo" alt="LiFE"/>
             <div class="logo-title">
                 <a href="https://github.com/rse/live-receiver" v-on:click="openURL">Receiver</a>
                 <a v-bind:href="'https://github.com/rse/live-receiver/releases/tag/' + pkg.version" v-on:click="openURL">{{ pkg.version }}</a>
             </div>
         </div>
         <div class="col-2-3">
-            <a href="https://github.com/rse/live-receiver" v-on:click="openURL">LiVE Receiver</a>
+            <a href="https://github.com/cihanoecal/life-receiver" v-on:click="openURL">LiFE Receiver</a>
             {{ $t("about.description-1") }}
-            <a href="https://video-experience.live" v-on:click="openURL">Live Video Experience (LiVE, video-experience.live)</a>,
+            <a href="https://video-experience.live" v-on:click="openURL">Live Video Experience (LiFE, video-experience.live)</a>,
             {{ $t("about.description-2") }}
 
             <p/>
-            <a href="https://github.com/rse/live-receiver" v-on:click="openURL">LiVE Receiver</a>
-            <a v-bind:href="'https://github.com/rse/live-receiver/releases/tag/' + pkg.version" v-on:click="openURL">{{ pkg.version }}</a>
+            <a href="https://github.com/cihanoecal/life-receiver" v-on:click="openURL">LiFE Receiver</a>
+            <a v-bind:href="'https://github.com/rse/life-receiver/releases/tag/' + pkg.version" v-on:click="openURL">{{ pkg.version }}</a>
             <span v-html="$t('about.description-3')"></span>
-            <a href="https://engelschall.com" v-on:click="openURL">Dr. Ralf S. Engelschall</a>
+            <span>Cihan Öcal</span>
             {{ $t("about.description-4") }}
             <a href="https://spdx.org/licenses/GPL-3.0-only" v-on:click="openURL">General Public License (GPL) 3.0</a>.
             <span v-html="$t('about.description-5')"></span>

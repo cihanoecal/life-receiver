@@ -1,6 +1,6 @@
 /*
-**  Live Video Experience (LiVE)
-**  Copyright (c) 2020-2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Live Free Video Experience (LiFE)
+**  Copyright (c) 2022 Cihan Öcal <mailto:cihanoecal@tuta.io>
 **  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 */
 
@@ -64,9 +64,9 @@ const PromptPW  = require("prompt-password")
             (notice: under Windows the ZIP does NOT automatically use a top-level directory)  */
         console.log("++ packing App into ZIP distribution archive")
         zip.zipSync(
-            path.join(__dirname, "dist/LiVE-Receiver.exe"),
-            path.join(__dirname, `dist/LiVE-Receiver-win-${arch2}.zip`))
-        await sign(`dist/LiVE-Receiver-win-${arch2}.zip`)
+            path.join(__dirname, "dist/LiFE-Receiver.exe"),
+            path.join(__dirname, `dist/LiFE-Receiver-win-${arch2}.zip`))
+        await sign(`dist/LiFE-Receiver-win-${arch2}.zip`)
     }
     else if (os.platform() === "darwin") {
         /*  run Electron-Builder to package the application  */
@@ -77,11 +77,11 @@ const PromptPW  = require("prompt-password")
         /*  pack application into a distribution archive
             (notice: under macOS the ZIP DOES automatically use a top-level directory)  */
         console.log("++ packing App into ZIP distribution archive")
-        shell.mv("dist/mac/LiVE-Receiver.app", "dist/LiVE-Receiver.app")
+        shell.mv("dist/mac/LiFE-Receiver.app", "dist/LiFE-Receiver.app")
         zip.zipSync(
-            path.join(__dirname, "dist/LiVE-Receiver.app"),
-            path.join(__dirname, `dist/LiVE-Receiver-mac-${arch2}.zip`))
-        await sign(`dist/LiVE-Receiver-mac-${arch2}.zip`)
+            path.join(__dirname, "dist/LiFE-Receiver.app"),
+            path.join(__dirname, `dist/LiFE-Receiver-mac-${arch2}.zip`))
+        await sign(`dist/LiFE-Receiver-mac-${arch2}.zip`)
     }
     else if (os.platform() === "linux") {
         /*  run Electron-Builder to package the application  */
@@ -91,7 +91,7 @@ const PromptPW  = require("prompt-password")
 
         /*  pack application into a distribution archive  */
         console.log("++ packing App into ZIP distribution archive")
-        shell.mv("dist/LiVE-Receiver-*.AppImage", "dist/LiVE-Receiver")
+        shell.mv("dist/LiFE-Receiver-*.AppImage", "dist/LiVE-Receiver")
         zip.zipSync(
             path.join(__dirname, "dist/LiVE-Receiver"),
             path.join(__dirname, `dist/LiVE-Receiver-lnx-${arch2}.zip`))
