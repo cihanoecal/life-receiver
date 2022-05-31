@@ -1,3 +1,4 @@
 node_modules
 app-main-relay-videostream.d
 dist
+.idea
