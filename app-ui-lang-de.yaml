@@ -208,9 +208,9 @@ settings:
     buffering-label:                Video Stream Puffer (ms)
 
     recordings-label:               Stream-Aufzeichnung
-    recordings-48h-label:           48 Stunden
-    recordings-48h-tooltip:         Deine Streams werden lokal gespeichert, um innerhalb<br/>
-                                    von <span class=attention-boxed>48</span> Stunden erneut abgespielt zu werden.<br/>
+    recordings-eternal-label:       Endlos
+    recordings-eternal-tooltip:     Deine Streams werden lokal gespeichert, um innerhalb<br/>
+                                    von <span class=attention-boxed>∞</span> Stunden erneut abgespielt zu werden.<br/>
                                     Bitte stelle sicher, daß der freie Speicherplatz es erlaubt<br/>
                                     mindestens 1 GB/Stunde zu speichern.
     recordings-24h-label:           24 Stunden
