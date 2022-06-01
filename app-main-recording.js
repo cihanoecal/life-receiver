@@ -18,6 +18,8 @@ const getHostId    = require("hostid")
 const rimraf       = require("rimraf")
 const m3u8Parser   = require("m3u8-parser")
 
+const keyFileName = "key.txt"
+
 /*  the exported API  */
 module.exports = class Recording extends EventEmitter {
     constructor (options = {}) {
@@ -224,12 +226,12 @@ module.exports = class Recording extends EventEmitter {
         }
         else if (filename.match(/\.mp4$/)) {
             let data = await fs.promises.readFile(file, { encoding: null })
-            data = this.decrypt(ctx.key, ctx.iv, data)
-            response = { data, type: "video/mp4" }
+            data = await this.smartDecrypt(ctx, data)
+            response = { data, type: "video/mp4" };
         }
         else if (filename.match(/\.m4s$/)) {
             let data = await fs.promises.readFile(file, { encoding: null })
-            data = this.decrypt(ctx.key, ctx.iv, data)
+            data = await this.smartDecrypt(ctx, data)
             response = { data, type: "video/iso.segment" }
         }
 
@@ -240,6 +242,40 @@ module.exports = class Recording extends EventEmitter {
         return response
     }
 
+    async smartDecrypt(ctx, data) {
+        const keyFile = path.join(ctx.dir, keyFileName);
+        if (fs.existsSync(keyFile)) {
+            let decryptInfo = await this.getDecryptInfo(keyFile);
+            data = this.decrypt(decryptInfo.key, decryptInfo.iv, data)
+            this.options.log("debug", `using key from file system with key: "${decryptInfo.key}", iv: "${decryptInfo.iv}". `)
+        }
+        else{
+            data = this.decrypt(ctx.key, ctx.iv, data)
+            this.options.log("debug", `using key from file system with key: "${data.key}", iv: "${data.iv}". `)
+            await this.saveKey(ctx, keyFile)
+        }
+
+        return data;
+    }
+
+    async getDecryptInfo(keyFile) {
+        const keyRegex = /(key: )(?<key>.*), (iv: )(?<iv>.*)/ig;
+        let keyData = await fs.promises.readFile(keyFile, { encoding: "utf8" })
+        let groups = keyRegex.exec(keyData).groups;
+        
+        return  {
+            key: groups.key,
+            iv: groups.iv
+        }
+    }
+    
+    async saveKey(ctx, keyFile) {
+        await fs.promises.writeFile(
+            keyFile,
+            `key: ${ctx.key}, iv: ${ctx.iv}`,
+            {encoding: "utf8"});
+    }
+    
     /*  delete a single recording  */
     async delete (recording) {
         /*  determine pathname  */
