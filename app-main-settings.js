@@ -22,7 +22,7 @@ module.exports = class Settings {
         }, options)
 
         /*  determine name of configuration file  */
-        const { dataDir } = syspath({ appName: this.options.appId })
+        const { dataDir } = syspath({ appName: "LiVE-Receiver" })
         this.cfgfile = path.join(dataDir, "settings.json")
 
         /*  initialize data  */
