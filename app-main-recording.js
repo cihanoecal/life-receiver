@@ -18,7 +18,7 @@ const getHostId    = require("hostid")
 const rimraf       = require("rimraf")
 const m3u8Parser   = require("m3u8-parser")
 
-const keyFileName = "key.txt"
+const keyFileName = "key_and_iv.txt"
 
 /*  the exported API  */
 module.exports = class Recording extends EventEmitter {
@@ -181,6 +181,21 @@ module.exports = class Recording extends EventEmitter {
 
             /*  provide results  */
             recordings.push({ id: dir, channel, start, duration })
+
+            /* generate decrypt infos and save in individual recording folder */
+            const keyFile = path.join(path.join(this.options.basedir, dir, keyFileName));
+            if (!fs.existsSync(keyFile)) {
+
+                const ma = dir.match(/^(\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2})-(.+)$/)
+                if (ma === null)
+                    throw new Error("invalid recording name") // should never happen, because regex above should cover this case already
+
+                /*  determine context for decryption key */
+                const time    = ma[1]
+                const ctx = this.makeCtx(time, channel)
+
+                await this.saveKey(ctx, keyFile)
+            }
         }
         return recordings
     }
@@ -247,12 +262,15 @@ module.exports = class Recording extends EventEmitter {
         if (fs.existsSync(keyFile)) {
             let decryptInfo = await this.getDecryptInfo(keyFile);
             data = this.decrypt(decryptInfo.key, decryptInfo.iv, data)
-            this.options.log("debug", `using key from file system with key: "${decryptInfo.key}", iv: "${decryptInfo.iv}". `)
+            this.options.log(
+                "debug",
+                `using decryptInfo from file system with key: "${decryptInfo.key}", iv: "${decryptInfo.iv}". `)
         }
-        else{
+        else{ // decrypt info is not present in folder, generate on the fly:
             data = this.decrypt(ctx.key, ctx.iv, data)
-            this.options.log("debug", `using key from file system with key: "${data.key}", iv: "${data.iv}". `)
-            await this.saveKey(ctx, keyFile)
+            this.options.log(
+                "debug",
+                `using decryptInfo dynamically generated: "${data.key}", iv: "${data.iv}". `)
         }
 
         return data;
