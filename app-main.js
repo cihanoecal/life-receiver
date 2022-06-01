@@ -670,8 +670,7 @@ const app = electron.app
             app.win.webContents.send("stream-end")
             await new Promise((resolve) => setTimeout(resolve, 1 * 1000))
 
-            /*  prune to free space (just in case) and especially update UI for new recording  */
-            await recording.prune(app.recordingHours)
+            /*  update UI for new recording  */
             app.win.webContents.send("recordings-renew")
 
             /*  indicate success  */

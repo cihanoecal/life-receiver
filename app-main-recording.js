@@ -257,10 +257,5 @@ module.exports = class Recording extends EventEmitter {
             })
         })
     }
-
-    /*  prune all recordings  */
-    async prune (after) {
-        // do nothing :)
-    }
 }
 
