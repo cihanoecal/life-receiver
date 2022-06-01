@@ -119,21 +119,18 @@
         </div>
         <div class="selbox-container">
             <div class="selbox"
-                v-tooltip.top="{ content: $t('settings.recordings-48h-tooltip') }"
-                v-bind:class="{ active: intRecordingHours === 48 }"
-                v-on:click="intRecordingHours = 48">
-                {{ $t("settings.recordings-48h-label") }}
+                v-tooltip.top="{ content: $t('settings.recordings-eternal-tooltip') }"
+                v-bind:class="{ active: true }">
+                {{ $t("settings.recordings-eternal-label") }}
             </div>
             <div class="selbox"
                 v-tooltip.top="{ content: $t('settings.recordings-24h-tooltip') }"
-                v-bind:class="{ active: intRecordingHours === 24 }"
-                v-on:click="intRecordingHours = 24">
+                v-bind:class="{ active: false, disabled: true }">
                 {{ $t("settings.recordings-24h-label") }}
             </div>
             <div class="selbox"
                 v-tooltip.top="{ content: $t('settings.recordings-none-tooltip') }"
-                v-bind:class="{ active: intRecordingHours === 0 }"
-                v-on:click="intRecordingHours = 0">
+                v-bind:class="{ active: false, disabled: true }">
                 {{ $t("settings.recordings-none-label") }}
             </div>
         </div>

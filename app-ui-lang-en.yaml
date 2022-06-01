@@ -206,9 +206,9 @@ settings:
     buffering-label:                Video Stream Buffering (ms)
 
     recordings-label:               Stream Recordings
-    recordings-48h-label:           48 Hours
-    recordings-48h-tooltip:         Your streams will be stored locally<br/>
-                                    in order to be replayed within <span class=attention-boxed>48</span> hours.<br/>
+    recordings-eternal-label:           Eternal
+    recordings-eternal-tooltip:         Your streams will be stored locally<br/>
+                                    in order to be replayed within <span class=attention-boxed>∞</span> hours.<br/>
                                     Please ensure that your free disk space<br/>
                                     allows storing about 1 GB/hour.
     recordings-24h-label:           24 Hours
